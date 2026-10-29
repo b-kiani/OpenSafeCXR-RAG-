@@ -1,0 +1,80 @@
+# OpenSafeCXR-RAG++ configuration record (paper Sec. III-G, Table I)
+#
+# Two blocks:
+#   archived_run        what the reported results were produced with. `null` means the value
+#                       was not stored and could not be recovered; it is NOT guessed here.
+#   reference_config    a fully specified configuration for NEW experiments. It is not claimed
+#                       to reproduce the paper's Combined RAG or Gated RAG++ numbers exactly.
+
+archived_run:
+  data:
+    iu_split: {method: uid_level, ratios: [0.70, 0.10, 0.20], seed: 42,
+               n_train: 5188, n_val: 746, n_test: 1492}
+    nih_split: {method: official_test + patient_disjoint_val,
+                n_train: 77988, n_val: 8536, n_test: 25596}
+    retrieval_bank: iu_train_only
+    exclude_same_uid: true
+  detector:
+    backbone: densenet121_imagenet
+    labels: 14
+    loss: per_label_bce
+    optimizer: {name: adamw, lr: 1.0e-4, weight_decay: 1.0e-4}
+    epochs: 12
+    early_stopping: val_mean_auroc
+    thresholds:
+      Atelectasis: 0.70
+      Cardiomegaly: 0.90
+      Effusion: 0.70
+      Infiltration: 0.55
+      Mass: 0.85
+      Nodule: 0.75
+      Pneumonia: 0.80
+      Pneumothorax: 0.85
+      Consolidation: 0.75
+      Edema: 0.90
+      Emphysema: 0.90
+      Fibrosis: 0.85
+      Pleural_Thickening: 0.85
+      Hernia: 0.95
+  retrieval:
+    image_embedding: densenet121_1024d
+    abnormality_vector: detector_probabilities_14d
+    similarity: cosine
+    top_k: 3
+    alpha_combined_rag: null        # not stored; back-inference resolved only 2 cases
+    alpha_abnormality_only: 1.0
+    alpha_image_only: 0.0
+  generator:
+    model: t5-base
+    epochs: 5
+    lr: 3.0e-4
+    weight_decay: 0.01
+    label_smoothing: 0.05
+    batch_size: 2
+    max_source_tokens: 512
+    max_target_tokens: 180
+    decoding: {beam_width: 4, no_repeat_ngram_size: 3, sampling: false}
+  rewrite:
+    remove_statements_for: H        # H = A_R \ A_q
+    verbalise: O                    # O = A_q \ A_R
+    templates:
+      moderate: "Possible {label} cannot be excluded."
+      high: "{label} noted."
+    moderate_high_cutoff: null      # not recoverable from retained artifacts
+  evaluation:
+    chexbert: {package: radeval, metric: f1chexbert,
+               five_labels: [Cardiomegaly, Edema, Consolidation, Atelectasis, Pleural Effusion]}
+    radgraph: {package: radgraph, version: 0.1.18, model_type: radgraph-xl, reward_level: all}
+    paired_bootstrap_resamples: 10000
+    legacy_bootstrap: {resamples: 1000, correction: benjamini_hochberg, comparisons: 48}
+
+reference_config:
+  # Inherits everything from archived_run except the two unrecoverable values below.
+  retrieval: {top_k: 3, alpha: 0.5}
+  rewrite:
+    verbalise_all_O_with: moderate   # single tier: every label in O gets the cautious template
+    moderate_high_cutoff: null       # unused in single-tier mode
+  detector_thresholds: archived_run.detector.thresholds
+  # Recommended before any new use of the rewrite in IU-like data:
+  #   python recalibrate_thresholds.py ... --strategy precision --min-precision 0.5
+  # and replace detector_thresholds with the frozen validation-selected values.
