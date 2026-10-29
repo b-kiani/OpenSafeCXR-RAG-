@@ -1,0 +1,16 @@
+label,auroc,auprc,positive_cases,threshold
+Atelectasis,0.756,0.32,3279,0.7
+Cardiomegaly,0.894,0.349,1069,0.9
+Consolidation,0.732,0.147,1815,0.75
+Edema,0.835,0.155,925,0.9
+Effusion,0.815,0.488,4658,0.7
+Emphysema,0.898,0.382,1093,0.9
+Fibrosis,0.819,0.098,435,0.85
+Hernia,0.939,0.358,86,0.95
+Infiltration,0.69,0.385,6112,0.55
+Mass,0.803,0.282,1748,0.85
+Nodule,0.736,0.217,1623,0.75
+Pleural_Thickening,0.763,0.132,1143,0.85
+Pneumonia,0.695,0.05,555,0.8
+Pneumothorax,0.833,0.375,2665,0.85
+MEAN,0.8,0.267,,

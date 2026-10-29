@@ -1,0 +1,7 @@
+condition,S,C,H,O,RE,RR,RL,B1,SS,U,T,penalty
+Gated RAG++,0.511,0.351,0.0,0.735,,,0.163,0.184,,0.88,0.008,
+Combined RAG,0.464,0.002,0.003,0.993,,,0.307,0.268,,0.026,0.501,
+Abnormality-only RAG,,,,,,,,,,,,
+Image-only RAG,,,,,,,,,,,,
+No-retrieval,,,,,,,,,,,,
+Retrieval-only,,,,,,,,,,,,-0.15

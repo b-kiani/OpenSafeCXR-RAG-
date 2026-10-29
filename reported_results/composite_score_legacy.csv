@@ -1,0 +1,7 @@
+condition,composite
+Gated RAG++,0.5101
+Image-only RAG,0.3638
+Combined RAG,0.3435
+Abnormality-only RAG,0.3211
+No-retrieval,0.3022
+Retrieval-only,0.2872

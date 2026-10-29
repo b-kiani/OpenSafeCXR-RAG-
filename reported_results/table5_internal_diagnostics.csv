@@ -1,0 +1,9 @@
+diagnostic,combined_rag,gated_ragpp,direction,shares_rewrite_ontology
+legacy clinical-safety score,0.464,0.511,higher,yes
+detector-defined unsupported-label rate,0.003,0.0,lower,yes
+detector-defined omission rate,0.993,0.735,lower,yes
+rule-based CheXbert-style F1,0.002,0.351,higher,yes
+unique-output ratio,0.026,0.88,higher,no
+top-output repetition,0.501,0.008,lower,no
+ROUGE-L,0.307,0.163,higher,no
+BLEU-1,0.268,0.184,higher,no

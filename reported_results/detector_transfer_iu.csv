@@ -1,0 +1,8 @@
+finding,nih_threshold,nih_auroc,iu_proxy_auroc,nih_auprc,iu_proxy_auprc,iu_f1_at_nih_threshold
+Atelectasis,0.7,0.756,0.767,0.32,0.3,0.175
+Cardiomegaly,0.9,0.894,0.707,0.349,0.373,0.213
+Effusion,0.7,0.815,0.908,0.488,0.454,0.409
+Pneumonia,0.8,0.695,0.691,0.05,0.1,0.146
+Pneumothorax,0.85,0.833,0.615,0.375,0.017,0.0
+Consolidation,0.75,0.732,0.76,0.147,0.03,0.0
+Edema,0.9,0.835,0.811,0.155,0.198,0.143

@@ -1,0 +1,4 @@
+comparison,reward_level,delta,ci95_low,ci95_high,resamples,seed
+Gated RAG++ minus Combined RAG,entity,-0.0891,-0.0983,-0.0801,10000,42
+Gated RAG++ minus Combined RAG,entity_relation,-0.0939,-0.1027,-0.0851,10000,42
+Gated RAG++ minus Combined RAG,complete,-0.0581,-0.067,-0.0497,10000,42

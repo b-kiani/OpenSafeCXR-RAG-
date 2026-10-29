@@ -1,0 +1,15 @@
+# Archived per-label positivity thresholds (NIH label order); paper Sec. III-B
+Atelectasis: 0.70
+Cardiomegaly: 0.90
+Effusion: 0.70
+Infiltration: 0.55
+Mass: 0.85
+Nodule: 0.75
+Pneumonia: 0.80
+Pneumothorax: 0.85
+Consolidation: 0.75
+Edema: 0.90
+Emphysema: 0.90
+Fibrosis: 0.85
+Pleural_Thickening: 0.85
+Hernia: 0.95

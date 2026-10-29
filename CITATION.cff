@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the paper below."
+title: "OpenSafeCXR-RAG++"
+type: software
+license: MIT
+authors:
+  - family-names: "Kiani Kalejahi"
+    given-names: "Behnam"
+    email: "b.kiani@centralasian.uz"
+    affiliation: "Central Asian University"
+  - family-names: "Khan"
+    given-names: "Sajid"
+    affiliation: "Central Asian University"
+  - family-names: "Manzoor"
+    given-names: "Adnan"
+    affiliation: "Central Asian University"
+  - family-names: "Castro"
+    given-names: "Eugene"
+    affiliation: "Central Asian University"
+  - family-names: "Atakhodjaeva"
+    given-names: "Kamila"
+    affiliation: "Central Asian University"
+keywords:
+  - chest X-ray
+  - radiology report generation
+  - retrieval-augmented generation
+  - CheXbert
+  - RadGraph
+preferred-citation:
+  type: conference-paper
+  title: "OpenSafeCXR-RAG++: Detector-Constrained Retrieval-Augmented Structured Chest X-ray Report Generation with Independent Factuality Evaluation"
+  authors:
+    - family-names: "Kiani Kalejahi"
+      given-names: "Behnam"
+    - family-names: "Khan"
+      given-names: "Sajid"
+    - family-names: "Manzoor"
+      given-names: "Adnan"
+    - family-names: "Castro"
+      given-names: "Eugene"
+    - family-names: "Atakhodjaeva"
+      given-names: "Kamila"
+  collection-title: "Proceedings of ICTACS 2026"
+  year: 2026

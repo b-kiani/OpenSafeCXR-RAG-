@@ -1,0 +1,6 @@
+label,combined_precision,combined_recall,combined_f1,gated_precision,gated_recall,gated_f1
+Cardiomegaly,0.636,0.033,0.063,0.424,0.29,0.345
+Edema,0.0,0.0,0.0,0.115,0.6,0.194
+Consolidation,0.0,0.0,0.0,0.013,0.769,0.026
+Atelectasis,0.0,0.0,0.0,0.259,0.556,0.354
+Pleural Effusion,0.0,0.0,0.0,0.215,0.838,0.342

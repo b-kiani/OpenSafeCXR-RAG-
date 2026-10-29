@@ -1,0 +1,7 @@
+condition,chexbert_5_micro_f1,chexbert_5_macro_f1,chexbert_5_weighted_f1,chexbert_all_micro_f1,chexbert_all_macro_f1,radgraph_entity,radgraph_entity_relation,radgraph_complete,generative
+Abnormality-only RAG,0.0,0.0,0.0,0.324,0.037,0.347,0.328,0.2,yes
+Image-only RAG,0.004,0.002,0.004,0.321,0.039,0.346,0.314,0.23,yes
+Combined RAG,0.028,0.013,0.027,0.293,0.045,0.273,0.261,0.191,yes
+No-retrieval,0.051,0.023,0.049,0.334,0.05,0.236,0.23,0.188,yes
+Retrieval-only,0.27,0.209,0.27,0.297,0.147,0.262,0.237,0.169,no
+Gated RAG++,0.219,0.252,0.325,0.167,0.14,0.183,0.167,0.133,yes

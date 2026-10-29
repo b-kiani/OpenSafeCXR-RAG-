@@ -1,0 +1,7 @@
+alpha_abnormality_weight,K,mean_chexbert_jaccard,mean_hamming_agreement
+0.0,3,0.3046,
+0.25,3,0.3019,
+0.5,3,0.2909,
+0.75,3,0.2883,
+1.0,3,0.2669,
+0.0,1,0.3063,0.8919
